@@ -4,52 +4,49 @@ agent any
 
 stages
 {
-
 stage('Build')
 {
-
 steps
 {
-echo 'Mrinmoy Biswas'
-}
-}
-
-stage('Deploy')
-{
-steps
-{
-echo 'Deploying the Test'
-}
+bat "mvn clean"
 }
 
-stage('Test')
-{
-steps
-{
-bat " mvn test"
 }
+stage('deploy')
+{
+steps{
+echo 'deploying the code'
+}
+
+}
+stage('test')
+{
+steps{
+bat "mvn test"
+}
+
 }
 
 stage('Unit Testing')
 {
-steps
-{
-bat "compile"
-}
+steps{
+bat "mvn compile"
 }
 
-
+}
 stage('Release')
 {
-steps
-{
-echo 'Releasing to Prod'
+when{
+branch "origin/master"
 }
-
-
-
-
+steps{
+echo 'releasing the project'
 }
 
 }
+
+
+
+}
+
 }
