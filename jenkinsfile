@@ -7,10 +7,15 @@ stages
 
 stage('Build')
 {
+
 steps
 {
-bat "clean"
+echo 'Mrinmoy Biswas'
 }
+
+
+
+
 }
 
 stage('Deploy')
@@ -44,6 +49,10 @@ steps
 {
 echo 'Releasing to Prod'
 }
+
+
+
+
 }
 
 }
