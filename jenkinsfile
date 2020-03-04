@@ -8,21 +8,21 @@ stage('Build')
 {
 steps
 {
-bat 'compile'
+echo 'Building the JOB......'
 }
 
 }
 stage('deploy')
 {
 steps{
-echo 'deploying the code'
+echo 'Deploying the JOB.....'
 }
 
 }
 stage('test')
 {
 steps{
-bat "mvn test"
+echo 'Testing......'
 }
 
 }
@@ -30,17 +30,14 @@ bat "mvn test"
 stage('Unit Testing')
 {
 steps{
-bat "mvn compile"
+echo 'Performing Unit Tesing.....'
 }
 
 }
 stage('Release')
 {
-when{
-branch "origin/master"
-}
 steps{
-echo 'releasing the project'
+echo 'Releasing the Project to Prod....'
 }
 
 }
