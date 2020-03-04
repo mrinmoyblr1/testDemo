@@ -1,0 +1,50 @@
+pipeline
+{
+agent any
+
+stages
+{
+
+stage('Build')
+{
+steps
+{
+bat "mvn clean"
+}
+}
+
+stage('Deploy')
+{
+steps
+{
+echo 'Deploying the Test'
+}
+}
+
+stage('Test')
+{
+steps
+{
+bat "mvn test"
+}
+}
+
+stage('Unit Testing')
+{
+steps
+{
+bat "mvn compile"
+}
+}
+
+
+stage('Release')
+{
+steps
+{
+echo 'Releasing to Prod'
+}
+}
+
+}
+}
