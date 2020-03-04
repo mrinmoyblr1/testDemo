@@ -9,7 +9,7 @@ stage('Build')
 {
 steps
 {
-bat "mvn clean"
+bat "clean"
 }
 }
 
@@ -25,7 +25,7 @@ stage('Test')
 {
 steps
 {
-bat "mvn test"
+bat "test"
 }
 }
 
@@ -33,7 +33,7 @@ stage('Unit Testing')
 {
 steps
 {
-bat "mvn compile"
+bat "compile"
 }
 }
 
