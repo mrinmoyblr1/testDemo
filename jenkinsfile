@@ -12,14 +12,14 @@ echo 'Building the JOB......'
 }
 
 }
-stage('deploy')
+stage('Deploy')
 {
 steps{
 echo 'Deploying the JOB.....'
 }
 
 }
-stage('test')
+stage('Test')
 {
 steps{
 echo 'Testing......'
